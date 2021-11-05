@@ -27,7 +27,7 @@ CC = gcc
 
 RM = rm -f
 
-CFLAGS = -g
+CFLAGS = -g -Werror -Wextra -Wall
 FLAGS_MLX=-L/usr/lib -lXext -lX11 -lm
 
 all: $(NAME)

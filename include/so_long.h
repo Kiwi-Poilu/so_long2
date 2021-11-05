@@ -71,7 +71,7 @@ void	display_exit(t_game *game, int i, int j);
 //main.c
 int		gnl_proxy(int fd, char **line);
 char	**ft_store_map(int fd);
-int		ft_check_ber(char *str);
+char	**ft_store_map_free(char *a, char*b, int ret_gnl);
 int		ft_free_map(t_game *game);
 int		main(int ac, char **av);
 
@@ -91,7 +91,7 @@ int		wads_pressed(t_game *game, int keycode);
 //game.c
 int		ft_check_food(t_game *game);
 void	ft_tile(t_game *game, char c, int i, int j);
-void	ft_draw(t_game	*game);
+int		ft_draw(t_game	*game);
 void	move_player(t_game *game);
 int		ft_game(t_map *map, t_game *game);
 
@@ -116,7 +116,7 @@ int		ft_error_dealer(char *error);
 int		ft_map_height(char **map);
 int		set_width_height(t_game *game);
 int		parsing(t_game *game);
-int		check_ber(char *str);
+int		ft_check_ber(char *str);
 //ft_putchar.c
 void	ft_putchar(char c);
 

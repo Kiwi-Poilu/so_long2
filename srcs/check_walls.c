@@ -62,4 +62,5 @@ int	check_all_walls(t_game *game)
 		return (ft_error_dealer("Map is not rectangular\n"));
 	if (check_full_row(game->map->map[i]))
 		return (ft_error_dealer("Map is not surrounded by walls\n"));
+	return (0);
 }

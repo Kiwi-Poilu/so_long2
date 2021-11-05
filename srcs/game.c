@@ -16,7 +16,6 @@ int	ft_check_food(t_game *game)
 {
 	int	i;
 	int	j;
-	int	ret;
 
 	i = 0;
 	while (game->map->map[i])
@@ -57,7 +56,7 @@ void	ft_tile(t_game *game, char c, int i, int j)
 		display_ennemy(game, i, j);
 }
 
-void	ft_draw(t_game	*game)
+int	ft_draw(t_game	*game)
 {
 	int	x;
 	int	y;
@@ -76,6 +75,7 @@ void	ft_draw(t_game	*game)
 		}
 		x++;
 	}
+	return (0);
 }
 
 void	move_player(t_game *game)
@@ -106,13 +106,18 @@ void	move_player(t_game *game)
 int	ft_game(t_map *map, t_game *game)
 {
 	t_mlx	mlx;
+	int		vertical_res;
+	int		horizontal_res;
 
 	mlx.win = NULL;
 	ft_fill_struct(game, map, &mlx);
-	mlx.win = mlx_new_window(mlx.mlx, 1920, 1080, "so_long");
+	vertical_res = map->width * 64;
+	horizontal_res = map->height * 64;
+	mlx.win = mlx_new_window(mlx.mlx, vertical_res, horizontal_res, "so_long");
 	if (mlx.win == NULL)
 		ft_close(game);
 	ft_draw(game);
+	mlx_expose_hook(mlx.win, ft_draw, game);
 	mlx_hook(mlx.win, ClientMessage, NoEventMask, ft_close, game);
 	mlx_key_hook(mlx.win, button_press, game);
 	mlx_loop(mlx.mlx);

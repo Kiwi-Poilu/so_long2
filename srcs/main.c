@@ -40,7 +40,7 @@ int	gnl_proxy(int fd, char **line)
 	return (ret);
 }
 
-char	*ft_store_map_free(char *a, char*b, int ret_gnl)
+char	**ft_store_map_free(char *a, char*b, int ret_gnl)
 {
 	free(a);
 	free(b);
@@ -91,7 +91,6 @@ int	ft_free_map(t_game *game)
 
 int	main(int ac, char **av)
 {
-	int		i;
 	int		fd;
 	t_map	map;
 	t_game	game;
@@ -108,7 +107,6 @@ int	main(int ac, char **av)
 	if (map.map == NULL)
 		return (1);
 	game.map = &map;
-	i = 0;
 	if (parsing(&game) != 0)
 		return (ft_free_map(&game));
 	ft_game(&map, &game);

@@ -48,7 +48,6 @@ void	check_pce_line(int i, t_game *game, int pce[3])
 int	check_pce(t_game *game)
 {
 	int	i;
-	int	j;
 	int	pce[3];
 
 	i = 0;

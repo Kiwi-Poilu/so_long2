@@ -37,6 +37,7 @@ int	wads_pressed(t_game *game, int keycode)
 	}
 	else
 		move_player(game);
+	return (0);
 }
 
 int	button_press(int keycode, t_game *game)

@@ -30,6 +30,7 @@ int	ft_init_xpm_player(t_mlx *mlx)
 			"./xpm/prb.xpm", &mlx->width, &mlx->height);
 	if (!mlx->xpm_prb)
 		return (ft_error_dealer("Could not open prb.xpm file\n"));
+	return (0);
 }
 
 int	ft_init_xpm(t_mlx *mlx)
